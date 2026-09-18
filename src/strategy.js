@@ -9,14 +9,25 @@ function chooseMove(state) {
             let celda = state.tablero[fila][columna];
 
             if (celda[0] === state.jugador) {
+
                 let pieceId = celda;
-                movements[pieceId] = "N";
+
+                if (state.dado === 1) {
+                    movements[pieceId] = "N";
+                }
+                else if (state.dado === 2) {
+                    movements[pieceId] = "E";
+                }
+                else if (state.dado === 3) {
+                    movements[pieceId] = "S";
+                }
+
             }
 
         }
 
     }
-    
+
     return movements;
 }
 
